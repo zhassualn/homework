@@ -5,10 +5,10 @@ CODE = {' ': '_',	"'": '.----.',	'(': '-.--.-',	')': '-.--.-',	',': '--..--',	'-
  'M': '--',	'N': '-.',	'O': '---',	'P': '.--.',	'Q': '--.-',	'R': '.-.',	'S': '...',	'T': '-',	'U': '..-',
  'V': '...-',	'W': '.--',	'X': '-..-',	'Y': '-.--',	'Z': '--..',	'_': '..--.-', '':' '}
 
-#inverseMorseAlphabet=dict((v,k) for (k,v) in CODE.items())
-inverseMorseAlphabet = {v: k for k, v in CODE.items()}
 
-def convertToMorseCode(sentence):
+inverseMorseAlphabet = {x: k for k, x in CODE.items()}
+
+def converttomorsecode(sentence):
     sentence = sentence.upper()
     englishcodedSentence = ""
     for character in sentence:
@@ -16,7 +16,7 @@ def convertToMorseCode(sentence):
     return englishcodedSentence
 
 
-def convertToEnglish(sentence1):
+def converttoenglish(sentence1):
     b = sentence1.split(' ')
     MorsecodedSentence1 = ""
     for character in range(len(b)):
@@ -28,9 +28,9 @@ choice=input("Text or morse: ")
 
 if choice == "text":
     given_sentence = input("enter text code: ")
-    print(convertToMorseCode(given_sentence))
+    print(converttomorsecode(given_sentence))
 
 
 elif choice == "morse":
     given_sentence = input("enter morse code: ")
-    print(convertToEnglish(given_sentence))
+    print(converttoenglish(given_sentence))
